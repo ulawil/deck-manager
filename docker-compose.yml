@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  db:
+    container_name: deck_manager
+    image: postgres:17.5
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=deck_manager
+      - POSTGRES_USER=quest
+      - POSTGRES_PASSWORD=quest
+    volumes:
+      - demo-data:/var/lib/postgresql/data
+
+volumes:
+  demo-data:

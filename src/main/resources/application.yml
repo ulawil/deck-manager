@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: deck-manager
+  datasource:
+    url: jdbc:postgresql://localhost:5432/deck_manager
+    username: quest
+    password: quest
+  jpa:
+    show-sql: true

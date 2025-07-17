@@ -1,0 +1,1 @@
+ALTER TABLE deck_card ALTER COLUMN deck_id SET NOT NULL;

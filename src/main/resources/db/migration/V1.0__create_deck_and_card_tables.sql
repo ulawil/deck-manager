@@ -1,0 +1,11 @@
+CREATE TABLE deck (
+    id BIGSERIAL PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE deck_card (
+    id BIGSERIAL PRIMARY KEY,
+    quantity INT NOT NULL,
+    deck_id BIGINT NOT NULL,
+    CONSTRAINT fk_deck FOREIGN KEY (deck_id) REFERENCES deck(id) ON DELETE CASCADE
+);
