@@ -1,6 +1,6 @@
 package com.uleczka.deck_manager.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,12 +27,13 @@ public class DeckCardEntity {
     @SequenceGenerator(name = "deckCardIdGen", sequenceName = "deck_card_id_seq", allocationSize = 1)
     private Long id;
 
+    @Column(nullable = false)
     private Integer konamiId;
 
+    @Column(nullable = false)
     private Integer quantity;
 
     @ManyToOne
     @JoinColumn(name = "deck_id")
-    @JsonIgnore
     private DeckEntity deck;
 }

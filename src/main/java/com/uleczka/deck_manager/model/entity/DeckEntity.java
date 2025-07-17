@@ -1,6 +1,7 @@
 package com.uleczka.deck_manager.model.entity;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,9 +27,9 @@ public class DeckEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "deckIdGen")
     @SequenceGenerator(name = "deckIdGen", sequenceName = "deck_id_seq", allocationSize = 1)
-
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "deck", cascade = CascadeType.ALL, orphanRemoval = true)
